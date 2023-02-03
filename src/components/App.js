@@ -1,13 +1,14 @@
-import Article from "./Article/Article";
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import { useState } from "react";
+import TodoInputs from "./TodoInputs/TodoInputs";
+import TodoList from "./TodoList/TodoList";
 
 function App() {
+  const [todos, setTodos] = useState([]);
+
   return (
     <>
-      <Header />
-      <Article />
-      <Footer />
+      <TodoInputs addTodo={todo => setTodos([...todos, todo])} />
+      <TodoList todos={todos} />
     </>);
 }
 
