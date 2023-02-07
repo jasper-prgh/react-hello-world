@@ -1,7 +1,7 @@
 function TodoList(props) {
     return (
-        <ul>
-            {props.todos.map((t, i) => <li key={i}>{t}</li>)}
+        <ul className={['class1', 'class2', 'class3'].join(' ')}>
+            {[...props.todos].map((t, i) => <li key={i}>{t}</li>)}
         </ul>
     );
 }
